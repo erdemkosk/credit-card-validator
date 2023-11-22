@@ -14,7 +14,7 @@ func main() {
 
 	fmt.Println("This 5388466965157906 credit card is Valid? ", success)
 
-	generatedCreditCard := generateCreditCard()
+	generatedCreditCard := GenerateCreditCard()
 
 	val, _ := CheckCreditCardIsValid(generatedCreditCard)
 
@@ -22,7 +22,7 @@ func main() {
 
 }
 
-func sumSlice(slice []int) int {
+func SumSlice(slice []int) int {
 	sum := 0
 	for _, val := range slice {
 		sum += val
@@ -30,7 +30,7 @@ func sumSlice(slice []int) int {
 	return sum
 }
 
-func lunhAlgorithmChecker(creditCardNumber string) ([]int, []int) {
+func LunhAlgorithmChecker(creditCardNumber string) ([]int, []int) {
 
 	var oddOrderValues []int
 	var evenOrderValues []int
@@ -55,16 +55,16 @@ func lunhAlgorithmChecker(creditCardNumber string) ([]int, []int) {
 	return oddOrderValues, evenOrderValues
 }
 
-func generateCreditCard() string {
+func GenerateCreditCard() string {
 	var result strings.Builder
 
 	for i := 0; i < 15; i++ {
 		result.WriteString(fmt.Sprintf("%d", rand.Intn(9)))
 	}
 
-	oddOrderValues, evenOrderValues := lunhAlgorithmChecker(result.String())
+	oddOrderValues, evenOrderValues := LunhAlgorithmChecker(result.String())
 
-	sumOfVal := sumSlice(oddOrderValues) + sumSlice(evenOrderValues)
+	sumOfVal := SumSlice(oddOrderValues) + SumSlice(evenOrderValues)
 
 	validatorDigit := 10 - sumOfVal%10
 
@@ -78,9 +78,9 @@ func CheckCreditCardIsValid(creditCardNumber string) (bool, error) {
 		return false, errors.New("Credit cart mus be 16 Digit")
 	}
 
-	oddOrderValues, evenOrderValues := lunhAlgorithmChecker(creditCardNumber)
+	oddOrderValues, evenOrderValues := LunhAlgorithmChecker(creditCardNumber)
 
-	sumOfValues := sumSlice(oddOrderValues) + sumSlice(evenOrderValues)
+	sumOfValues := SumSlice(oddOrderValues) + SumSlice(evenOrderValues)
 
 	return sumOfValues%10 == 0, nil
 }

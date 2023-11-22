@@ -1,6 +1,11 @@
+![Logo](https://i.pinimg.com/736x/35/a7/d3/35a7d34dfd78c89cee2b80e0f1769cae.jpg)
+
+
 # Luhn Algorithm
 
 The Luhn algorithm, also known as the "modulus 10" or "mod 10" algorithm, is a simple checksum formula used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, and more.
+
+ [What is Luhn_algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)
 
 ## How it Works
 
