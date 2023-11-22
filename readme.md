@@ -10,3 +10,31 @@ The algorithm verifies the validity of a given number through the following step
 2. If the resulting doubled value is greater than 9, subtract 9 from it.
 3. Sum all the digits together.
 4. If the total sum is divisible by 10 without a remainder, the number is valid according to the Luhn algorithm.
+
+Usage
+This Go program demonstrates the application of the Luhn algorithm to validate credit card numbers and generate random valid credit card numbers.
+
+How to Use
+1. The generateCreditCard function creates a random 16-digit credit card number according to the Luhn algorithm.
+
+2. The CheckCreditCardIsValid function checks the validity of a given credit card number using the Luhn algorithm.
+
+Example 
+
+```bash
+  func main() {
+	fmt.Println("-------------Lunch Algorithm test-------------")
+
+	success, _ := CheckCreditCardIsValid("5388466965157906")
+
+	fmt.Println("This 5388466965157906 credit card is Valid? ", success)
+
+	generatedCreditCard := generateCreditCard()
+
+	val, _ := CheckCreditCardIsValid(generatedCreditCard)
+
+	fmt.Println("This "+generatedCreditCard+" genereted with system ! This credit card is Valid? ", val)
+}
+```
+    
+
